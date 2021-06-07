@@ -8,6 +8,7 @@ This database can handle large amounts of unstructured data with flexibility and
 
 I have accomplished the goals of the social media startup by using Mongoose and Express to set up API routes. 
 
+Enjoy my [walkthrough video](https://drive.google.com/file/d/1f4xKnCScuw5jeDAgzsxFbyQFPVb64ikt/view)!
 [GitHub Repository](https://github.com/Clayto30/social-network)
 
 ## Table of Contents (Optional)
