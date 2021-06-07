@@ -4,7 +4,7 @@
 
 A social media startup needs an API for their social network, using a NoSQL database, so I have created this repo to satisfy that request. 
 
-This database can handle large amounts of unstructured data and satisfy the social media startup's technical acceptance requirements for their user stories. 
+This database can handle large amounts of unstructured data with flexibility and quickness. It will also satisfy the social media startup's technical acceptance requirements for their user stories. Users can share their thoughts, react to friends' thoughts, and create a friend list.
 
 I have accomplished the goals of the social media startup by using Mongoose and Express to set up API routes. 
 
@@ -28,7 +28,7 @@ Enter the command 'npm start' in invoke the application. The server starts and t
 
 You can use an app like Insomnia Core to test the api routes for users and thoughts. You can run all CRUD routes on these models. The data will be displayed and formatted as JSON. 
 
-![alt text](assets/images/screenshot.png)
+![alt text](public/assets/images/screenshot.jpg)
 
 ## Credits
 
