@@ -5,16 +5,38 @@ const UserSchema = new Schema({
         type: String
         // string, unique, required, trimmed
     },
-    email : {
+    email: {
         type: String
         // string, required, unique, must match a valid email address (look into Mongoose's matching validation)
     },
-    thoughts: [],
+    thoughts: [
         // array of _id values referecing the Thought model
-    friends: []
-        // array of _id values referecing the User model (self-reference)
-    // create a virtual that retrieves the length of the user's friends array field on query
+        {
+            type: Schema.Types.ObjectId,
+            ref: 'Thought'
+        }
+    ],
+    friends: [
+        // array of _id values referencing the User model (self-reference)
 
+        {
+            type: Schema.Types.ObjectId,
+            ref: 'User'
+        }
+    ],
+},
+    {
+        toJSON: {
+            virtuals: true,
+        },
+        id: false
+    }
+);
+
+// virtual that retrieves the length of the user's friends array field on query
+
+UserSchema.virtual('friendCount').get(function () {
+    return this.friends.length;
 });
 
 const User = model('User', UserSchema);
