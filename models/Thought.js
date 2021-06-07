@@ -9,8 +9,8 @@ const ReactionSchema = new Schema(
         },
         reactionBody: {
             type: String,
-            required: true
-            // 280 character maximum
+            required: true,
+            maxlength: 280
         },
         username: {
             type: String,
@@ -28,8 +28,9 @@ const ReactionSchema = new Schema(
 const ThoughtSchema = new Schema({
     thoughtText: {
         type: String,
-        required: true
-        // must be between 1 and 280 characters
+        required: true,
+        minlength: 1,
+        maxlength: 280
     },
     createdAt: {
         // module 18.2.7 has information on date formatting
