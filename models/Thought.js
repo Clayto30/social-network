@@ -9,12 +9,12 @@ const ReactionSchema = new Schema(
         },
         reactionBody: {
             type: String,
-            // required
+            required: true
             // 280 character maximum
         },
         username: {
-            type: String
-            // required
+            type: String,
+            required: true
         },
         createdAt: {
             // module 18.2.7 has information on date formatting
@@ -27,8 +27,9 @@ const ReactionSchema = new Schema(
 
 const ThoughtSchema = new Schema({
     thoughtText: {
-        type: String
-        // String, required, must be between 1 and 280 characters
+        type: String,
+        required: true
+        // must be between 1 and 280 characters
     },
     createdAt: {
         // module 18.2.7 has information on date formatting
@@ -37,7 +38,8 @@ const ThoughtSchema = new Schema({
         // date, set default value to the current timestamp, use a getter method to format the timestamp on query
     },
     username: {
-        type: String
+        type: String,
+        required: true
         // the user that created this thought, string, required
     },
     reactions: [ReactionSchema]
@@ -59,4 +61,3 @@ ThoughtSchema.virtual('reactionCount').get(function() {
 const Thought = model('Thought', ThoughtSchema);
 
 module.exports = Thought;
-
